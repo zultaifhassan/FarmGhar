@@ -12,7 +12,7 @@ const Footer = () => {
     <div className="container">
       <div className="footer-section">
         <div className="footer-logo-side">
-          <h2>FarmHouse</h2>
+          <h2>FarmGhar</h2>
           <p>
             Copyright 2024 FarmHouse. All <br></br>Right Reserved
           </p>

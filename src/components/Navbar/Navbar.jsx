@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="container Animal-Navbar">
       <div className="animal-logo">
-        <h2>FarmHouse</h2>
+        <h2>FarmGhar</h2>
       </div>
       <div className="animal-centerlinks">
         <ul>
