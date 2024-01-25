@@ -18,7 +18,7 @@
  .login-form{
      max-width: 600px;
      background-color: #ffff;
-      
+     font-family: poppins;
  }
  .image img{
      margin-bottom: 40px;
@@ -43,6 +43,7 @@
  .eg{
     margin-bottom: 15px;
     font-size: 11px;
+    font-family: poppins;
  }
  .input-box .icon{
      color: rgb(23, 209, 23);
@@ -70,9 +71,11 @@
  .forget a{
      text-decoration: none;
      color:  rgb(23, 209, 23) ;
+     font-family: poppins;
  }
  .signup-btn button{
      width: 100%;
+     font-family: poppins;
      border: none;
      outline: none;
      border-radius: 10px;
@@ -89,6 +92,7 @@
      gap: 4px;
  }
  .text a{
+    font-family: poppins;
      text-decoration: none ;
      color:  rgb(23, 209, 23) ;
  }

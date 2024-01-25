@@ -10,6 +10,8 @@ import ServicesSlider from '../components/HomeSlider/ServicesSlider'
 import ExploreProducts from '../components/HomeSlider/ExploreProducts'
 import Video from '../components/ProductBox/Video'
 import ProductBlog from '../components/ProductBox/ProductBlog'
+import GetApp from './About/GetApp'
+import Content from './About/Content'
 
 const Home = () => {
   return (
@@ -25,6 +27,8 @@ const Home = () => {
       <ExploreProducts/>
       <Video/>
       <ProductBlog/>
+      <GetApp/>
+      <Content/>
     </div>
   )
 }
