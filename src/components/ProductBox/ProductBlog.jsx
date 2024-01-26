@@ -2,14 +2,41 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import { IoLocationOutline } from "react-icons/io5";
 // import { TiEye } from "react-icons/ti";
-import "./Product.css";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { IoLocationOutline } from "react-icons/io5";
+import { TiEye } from "react-icons/ti";
 
+import "./Product.css";
+import "./ProductBlog.css"
+
+ const paragraphStyles = {
+    WebkitLineClamp:1,
+    WebkitBoxOrient:'vertical',
+    overflow:'hidden',
+    display:'-webkit-box', 
+ }
+
+ const headingStyles = {
+    WebkitLineClamp:2,
+    WebkitBoxOrient:'vertical',
+    overflow:'hidden',
+    display:'-webkit-box',
+ }
 const ProductBlog = () => {
+
+  const [isOpen, setIsOpen] = useState(false)
+  const navigate = useNavigate();
+
+  const handleReadMore = () =>{
+    navigate('/blog');
+  }
+
   return (
     <div className="product-outer-div">
       <div className="product-list-header">
         <h4>Our Blogs</h4>
-        <Link> View All Products</Link>
+        <Link> View All Blogs</Link>
       </div>
       <div className="product-list-outer">
         <div className="animal-product-list">
@@ -18,14 +45,14 @@ const ProductBlog = () => {
           </div>
           <div className="product-details-price">
             <div className="animal-name-des">
-              <h3>15 care tips for</h3>
+              <h3 style={  isOpen ? null :paragraphStyles}>15 care tips for</h3>
             </div>
             <div className="posted-place-animal">
-              <p>The problem that face</p>
+              <p style={isOpen ? null : headingStyles} >The problem that face hjjhjdskjkjds jdskfhksd sjjhs ddsjcbsk skkjjjbsdd sd </p>
             </div>
             <div className="location-view">
               <div className="location-icon-place">
-                <p>Read More</p>
+                <p onClick={handleReadMore}>Read More</p>
               </div>
             </div>
           </div>
@@ -36,14 +63,14 @@ const ProductBlog = () => {
           </div>
           <div className="product-details-price">
             <div className="animal-name-des">
-              <h3>15 care tips for</h3>
+              <h3 style={  isOpen ? null :paragraphStyles}>15 care tips for</h3>
             </div>
             <div className="posted-place-animal">
-              <p>Posted 2d Ago</p>
+              <p style={isOpen ? null : headingStyles}>Posted 2d Ago</p>
             </div>
             <div className="location-view">
               <div className="location-icon-place">
-                <p>Read More</p>
+                <p onClick={handleReadMore}>Read More</p>
               </div>
             </div>
           </div>
@@ -54,14 +81,14 @@ const ProductBlog = () => {
           </div>
           <div className="product-details-price">
             <div className="animal-name-des">
-              <h3>15 care tips for</h3>
+              <h3 style={  isOpen ? null :paragraphStyles}>15 care tips for</h3>
             </div>
             <div className="posted-place-animal">
-              <p>Posted 2d Ago</p>
+              <p style={isOpen ? null : headingStyles}>Posted 2d Ago</p>
             </div>
             <div className="location-view">
               <div className="location-icon-place">
-                <p>Read More</p>
+                <p onClick={handleReadMore}>Read More</p>
               </div>
             </div>
           </div>
@@ -72,14 +99,14 @@ const ProductBlog = () => {
           </div>
           <div className="product-details-price">
             <div className="animal-name-des">
-              <h3>15 care tips for</h3>
+              <h3 style={  isOpen ? null :paragraphStyles}>15 care tips for</h3>
             </div>
             <div className="posted-place-animal">
-              <p>Posted 2d Ago</p>
+              <p style={isOpen ? null : headingStyles}>Posted 2d Ago</p>
             </div>
             <div className="location-view">
               <div className="location-icon-place">
-                <p>Read More</p>
+                <p onClick={handleReadMore}>Read More</p>
               </div>
             </div>
           </div>
@@ -90,14 +117,14 @@ const ProductBlog = () => {
           </div>
           <div className="product-details-price">
             <div className="animal-name-des">
-              <h3>15 care tips for</h3>
+              <h3 style={  isOpen ? null :paragraphStyles}>15 care tips for</h3>
             </div>
             <div className="posted-place-animal">
-              <p>Posted 2d Ago</p>
+              <p style={isOpen ? null : headingStyles}>Posted 2d Ago</p>
             </div>
             <div className="location-view">
               <div className="location-icon-place">
-                <p>Read More</p>
+                <p onClick={handleReadMore}>Read More</p>
               </div>
             </div>
           </div>

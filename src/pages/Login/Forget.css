@@ -16,12 +16,14 @@
      border-radius: 10px;
  }
  .login-form{
+    font-family: poppins;
      max-width: 600px;
      background-color: #ffff;
      margin-top: 50px;    
  }
  .login-form .send{
     font-size: inherit;
+    font-family: poppins;
     font-weight: inherit;
     margin-bottom: 29px;
 }
