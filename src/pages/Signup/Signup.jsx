@@ -52,8 +52,8 @@ const Signup = () => {
       <div className="signup-main">
         <form className="login-form" onSubmit={handleSubmit}>
         {error && <div className="error-message">{error}</div>}
-        <div className="image">
-          <img src="/images/login.svg" alt="login" />
+        <div className="sign-up-title">
+          <h2>FarmGhar</h2>
         </div>
         <h1 className='community'>Lets Join Our Community</h1>
         <div className="input-box">
@@ -61,11 +61,11 @@ const Signup = () => {
             <FiPhone/>
           </div>
           <div>
-          <input type="text" name='email' value={formData.email} onChange={handleInputChange} placeholder="Mobile Number" required />
+          <input type="text" name='email' value={formData.email} onChange={handleInputChange} placeholder="Email" required />
           </div>
         </div>
         <div className="eg">
-          <p>e.g (03011234567 or 3011234567)</p>
+          <p>e.g (abc@gmail.com)</p>
         </div>
         <div className="input-box">
           <div className="icon">

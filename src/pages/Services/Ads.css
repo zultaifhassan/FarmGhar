@@ -12,9 +12,10 @@
 }
 
 .service-head h2{
-    font-size: 22px;
+    font-size: 25px;
     margin-top: 30px;
-    font-weight: bolder;
+    font-weight: 600;
+    font-family: poppins;
 }
 
 .service-product-list{

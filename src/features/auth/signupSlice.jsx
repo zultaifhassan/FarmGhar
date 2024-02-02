@@ -32,7 +32,7 @@ export const signUpSlice = createSlice({
 
 export const signUpAsync = createAsyncThunk('signUp', async(apiData, {rejectWithValue}) => {
     try {
-        const { data } = await axios.post('http://localhost:4000/api/v1//user/register', apiData);
+        const { data } = await axios.post('http://localhost:4001/api/v1//user/register', apiData);
         return data;
     } catch (error) {
         return rejectWithValue('Error Occured During Signup')

@@ -1,11 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-// import { IoLocationOutline } from "react-icons/io5";
-// import { TiEye } from "react-icons/ti";
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { IoLocationOutline } from "react-icons/io5";
-import { TiEye } from "react-icons/ti";
 
 import "./Product.css";
 import "./ProductBlog.css"

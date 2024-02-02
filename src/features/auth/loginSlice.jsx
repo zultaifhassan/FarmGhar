@@ -46,7 +46,7 @@ export const authSlice = createSlice({
 export const login = createAsyncThunk('login', async(apiData, {rejectWithValue}) => {
 
     try {
-        const { data } = await axios.post('http://localhost:4000/api/v1/user/login', apiData);
+        const { data } = await axios.post('http://localhost:4001/api/v1/user/login', apiData);
         return data;
     } catch (error) {
         if (error?.response?.data?.message) {

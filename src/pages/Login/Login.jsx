@@ -48,8 +48,8 @@ const Login = () => {
       <div className="sub-main">
         <form className="login-form" onSubmit={handleLogin}>
         {error && <p style={{ color: 'red' }}>{error}</p>}
-          <div className="image">
-            <img src="/images/login.svg" alt="login" />
+          <div className="Login-form-title">
+            <h2>FarmGhar</h2>
           </div>
           <div className="input-box">
             <div className="icon">
