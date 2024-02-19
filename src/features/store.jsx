@@ -3,7 +3,7 @@ import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authSlice } from './auth/loginSlice';
 import { signUpSlice } from './auth/signupSlice';
-import { fetchProductSlice } from './products/fetchProductsSlice';
+import { productsSlice } from './products/products';
 
 
 const persistConfig = {
@@ -15,7 +15,7 @@ const persistConfig = {
     reducer: {
         auth: persistReducer(persistConfig, authSlice.reducer),
         signUp: signUpSlice.reducer,
-        fetchProducts: fetchProductSlice.reducer,
+        products : productsSlice.reducer,
     
     }
 })

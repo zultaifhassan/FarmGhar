@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { BASE_URL } from "../config";
 
 
 const initialState = {
-    user: null,
     loading: false,
     error: null,
+    success:false
 };
 
 
@@ -13,31 +14,34 @@ export const signUpSlice = createSlice({
     name: 'signUp',
     initialState,
     reducers: {
-        signUpStart: (state) => {
-            state.loading = true;
-            state.error = null;
-          },
-          signUpSuccess: (state, action) => {
-            state.loading = false;
-            state.user = action.payload;
-          },
-          signUpFailure: (state, action) => {
-            state.loading = false;
-            state.error = action.payload;
-          },
     },
+    extraReducers:(builder)=>{
+        builder.addCase(signup.pending,(state)=>{
+            state.loading = true;
+        });
+        builder.addCase(signup.fulfilled,(state,action)=>{
+            state.loading = false;
+            state.success = true;
+        });
+        builder.addCase(signup.rejected,(state,action)=>{
+            state.loading = false;
+            state.error = action.payload
+            
+        })
+    }
 });
 
 
 
-export const signUpAsync = createAsyncThunk('signUp', async(apiData, {rejectWithValue}) => {
+export const signup = createAsyncThunk('signup', async(apiData, {rejectWithValue}) => {
     try {
-        const { data } = await axios.post('http://localhost:4001/api/v1//user/register', apiData);
+        const { data } = await axios.post(`${BASE_URL}/user/register`, apiData);
         return data;
     } catch (error) {
+        console.log(error)
         return rejectWithValue('Error Occured During Signup')
     }
 });
 
 
-export const { signUpStart, signUpSuccess, signUpFailure } = signUpSlice.actions;
+// export const { signUpStart, signUpSuccess, signUpFailure } = signUpSlice.actions;

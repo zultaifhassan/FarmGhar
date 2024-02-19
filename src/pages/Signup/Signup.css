@@ -107,3 +107,21 @@
      text-decoration: none ;
      color:  rgb(23, 209, 23) ;
  }
+ .join-as-container {
+    margin-bottom: 20px;
+ }
+ .join-as-container h3{
+    text-align: left;
+    font-size: 17px;
+ }
+
+ .join-as-container-inner{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+ }
+ .join-as-container-inner div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+ }

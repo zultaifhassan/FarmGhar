@@ -4,11 +4,13 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { FiPhone } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../features/auth/loginSlice";
+import { clearState, login } from "../../features/auth/loginSlice";
 import Spinner from "../../components/spinners/Spinner";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  console.log('in login')
+  console.log("in login");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -16,8 +18,27 @@ const Login = () => {
     email: "",
     password: "",
   });
-
   const { loading, user, success, error } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (user) {
+      if (user?.user?.role === "farmer") {
+        navigate("/seller/dashboard");
+      }
+      if (user?.user?.role === "user") {
+        navigate("/");
+      }
+    }
+    if (error) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: error,
+        showConfirmButton: true,
+      });
+      dispatch(clearState());
+    }
+  }, [user, error, navigate, dispatch]);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -31,23 +52,11 @@ const Login = () => {
     dispatch(login(formData));
   };
 
-  useEffect(() => {
-    
-    if (success && user) {
-      navigate('/dashboard')
-      window.alert("Login Successfully")
-    } else {
-      // dispatch((error))
-    }
-  }, [success, navigate, formData]);
-
-  
-  
   return (
     <div className="main">
       <div className="sub-main">
         <form className="login-form" onSubmit={handleLogin}>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+          {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
           <div className="Login-form-title">
             <h2>FarmGhar</h2>
           </div>
@@ -85,9 +94,7 @@ const Login = () => {
             <a href="/forget">Forget Password?</a>
           </div>
           <div className="buttons">
-            <button>
-              {loading ? <Spinner /> : "Log In"}
-            </button>
+            <button>{loading ? <Spinner /> : "Log In"}</button>
           </div>
           <div className="text">
             <p>Don't have an account?</p>

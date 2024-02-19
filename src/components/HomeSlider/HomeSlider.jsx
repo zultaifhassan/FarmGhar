@@ -8,7 +8,7 @@ import "./HomeSlider.css";
 // import required modules
 import { Navigation } from "swiper/modules";
 
-const HomeSlider = () => {
+const HomeSlider = ({ setCategory }) => {
   return (
     <div className="Home-Slider-main">
       <h2>Categories</h2>
@@ -35,7 +35,10 @@ const HomeSlider = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <div className="home-slider-content">
+            <div
+              className="home-slider-content"
+              onClick={() => setCategory("cow")}
+            >
               <img src="/images/cow.png" alt="" />
               <div className="number-description">
                 <h4>Cows</h4>
@@ -44,7 +47,10 @@ const HomeSlider = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="home-slider-content">
+            <div
+              className="home-slider-content"
+              onClick={() => setCategory("sheep")}
+            >
               <img src="/images/sheep.png" alt="" />
               <div className="number-description">
                 <h4>Sheep</h4>
@@ -53,7 +59,10 @@ const HomeSlider = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="home-slider-content">
+            <div
+              className="home-slider-content"
+              onClick={() => setCategory("horse")}
+            >
               <img src="/images/horse.png" alt="" />
               <div className="number-description">
                 <h4>Horse</h4>
@@ -62,7 +71,10 @@ const HomeSlider = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="home-slider-content">
+            <div
+              className="home-slider-content"
+              onClick={() => setCategory("goat")}
+            >
               <img src="/images/goat.png" alt="" />
               <div className="number-description">
                 <h4>Goat</h4>
@@ -71,7 +83,10 @@ const HomeSlider = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="home-slider-content">
+            <div
+              className="home-slider-content"
+              onClick={() => setCategory("donkey")}
+            >
               <img src="/images/donkey.png" alt="" />
               <div className="number-description">
                 <h4>Donkey</h4>

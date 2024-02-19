@@ -1,0 +1,16 @@
+.global-empty-data-handler {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  left: 0;
+  right: 0;
+}
+.global-empty-data-handler p {
+  color: var(--blue-off-4, #7d7eaa);
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  
+}

@@ -4,18 +4,15 @@ import { IoLocationOutline } from "react-icons/io5";
 import { TiEye } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
 import "./Product.css";
-import { fetchProducts } from "../../features/products/fetchProductsSlice";
+// import { fetchProducts } from "../../features/products/products";
 
 const Product = () => {
   const dispatch = useDispatch();
-  const { products, loading, error } = useSelector((state) => state.fetchProducts);
+  const { products, loading, error } = useSelector((state) => state.products);
 
-  
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
-  
-  console.log(fetchProducts())
+  // useEffect(() => {
+  //   dispatch(fetchProducts());
+  // }, [dispatch]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -32,32 +29,33 @@ const Product = () => {
         <Link> View All Products</Link>
       </div>
       <div className="product-list-outer">
-        {products.map((product) => (
-          <div className="animal-product-list">
-            <div className="product-image">
-              <img src={product.image} alt="" />
-            </div>
-            <div className="product-details-price">
-              <div className="animal-name-des">
-                <h3>{product.category}</h3>
+        {products &&
+          products.map((product) => (
+            <div className="animal-product-list">
+              <div className="product-image">
+                <img src={product.image} alt="" />
               </div>
-              <div className="posted-place-animal">
-                <p>Posted 2d Ago</p>
-                <h5>{product.price}</h5>
-              </div>
-              <div className="location-view">
-                <div className="location-icon-place">
-                  <IoLocationOutline />
-                  <p>{product.place}</p>
+              <div className="product-details-price">
+                <div className="animal-name-des">
+                  <h3>{product.category}</h3>
                 </div>
-                <div className="view-eye-icon">
-                  <TiEye />
-                  <p>2345</p>
+                <div className="posted-place-animal">
+                  <p>Posted 2d Ago</p>
+                  <h5>{product.price}</h5>
+                </div>
+                <div className="location-view">
+                  <div className="location-icon-place">
+                    <IoLocationOutline />
+                    <p>{product.place}</p>
+                  </div>
+                  <div className="view-eye-icon">
+                    <TiEye />
+                    <p>2345</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
 
         {/* <div className="animal-product-list">
           <div className="product-image">
